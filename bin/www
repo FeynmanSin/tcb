@@ -1,0 +1,6 @@
+const func = process.argv[2];// 获取node启动命令参数
+if (!func) throw Error('You must provide the function name');
+const app = require(`../functions/${func}/app`);
+app.listen(process.env.PORT, () => {
+  console.log(`>>>>>>服务器已启动 http://localhost:${process.env.PORT}`);
+})
